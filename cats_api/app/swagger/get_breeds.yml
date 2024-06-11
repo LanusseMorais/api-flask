@@ -1,0 +1,23 @@
+---
+swagger: '2.0'
+info:
+  description: Endpoint para obter todas as raças de gatos.
+  version: "1.0.0"
+  title: "Obter Raças de Gatos"
+basePath: "/api/v1"
+schemes:
+- "http"
+paths:
+  /breeds:
+    get:
+      tags:
+      - "Gatos"
+      summary: "Lista de todas as raças de gatos"
+      description: "Retorna uma lista de todas as raças de gatos."
+      responses:
+        200:
+          description: "Uma lista de raças de gatos."
+          schema:
+            type: array
+            items:
+              type: string

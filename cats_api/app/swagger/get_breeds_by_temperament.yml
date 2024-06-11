@@ -1,0 +1,29 @@
+---
+swagger: '2.0'
+info:
+  description: Endpoint para obter raças de gatos por temperamento.
+  version: "1.0.0"
+  title: "Obter Raças por Temperamento"
+basePath: "/api/v1"
+schemes:
+- "http"
+paths:
+  /breeds/temperament/{temperament}:
+    get:
+      tags:
+      - "Gatos"
+      summary: "Lista de raças de gatos por temperamento"
+      description: "Retorna uma lista de raças de gatos com o temperamento especificado."
+      parameters:
+        - name: "temperament"
+          in: "path"
+          required: true
+          type: "string"
+          description: "Temperamento do gato"
+      responses:
+        200:
+          description: "Uma lista de raças de gatos com o temperamento especificado."
+          schema:
+            type: array
+            items:
+              type: string

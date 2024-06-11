@@ -1,0 +1,41 @@
+---
+swagger: '2.0'
+info:
+  description: Endpoint para obter informações de uma raça de gato específica.
+  version: "1.0.0"
+  title: "Obter Informações da Raça"
+basePath: "/api/v1"
+schemes:
+- "http"
+paths:
+  /breeds/{breed_id}:
+    get:
+      tags:
+      - "Gatos"
+      summary: "Informações de uma raça de gato específica"
+      description: "Retorna informações detalhadas de uma raça de gato específica."
+      parameters:
+        - name: "breed_id"
+          in: "path"
+          required: true
+          type: "string"
+          description: "ID da raça do gato"
+      responses:
+        200:
+          description: "Informações da raça do gato."
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              origin:
+                type: string
+              temperament:
+                type: string
+              description:
+                type: string
+              images:
+                type: array
+                items:
+                  type: string
+                  format: url

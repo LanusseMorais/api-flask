@@ -1,0 +1,29 @@
+---
+swagger: '2.0'
+info:
+  description: Endpoint para obter raças de gatos por origem.
+  version: "1.0.0"
+  title: "Obter Raças por Origem"
+basePath: "/api/v1"
+schemes:
+- "http"
+paths:
+  /breeds/origin/{origin}:
+    get:
+      tags:
+      - "Gatos"
+      summary: "Lista de raças de gatos por origem"
+      description: "Retorna uma lista de raças de gatos com a origem especificada."
+      parameters:
+        - name: "origin"
+          in: "path"
+          required: true
+          type: "string"
+          description: "Origem do gato"
+      responses:
+        200:
+          description: "Uma lista de raças de gatos com a origem especificada."
+          schema:
+            type: array
+            items:
+              type: string

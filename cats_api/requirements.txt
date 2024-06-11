@@ -4,3 +4,5 @@ Flask-Migrate
 Flasgger
 requests
 python-dotenv
+pymysql
+
